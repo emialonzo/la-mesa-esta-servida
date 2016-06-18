@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style media="screen">
+      body {
+        background: url(mesa-vacia.JPG) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    #yenga{
+      width: 10%;
+      padding: 2%;
+      height: auto;
+      display: block;
+      position: absolute;
+      /*left: 332px;*/
+      /*top: 282px;*/
+      left: 20%;
+      top: 38%;
+    }
+    #yenga img{
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top:0px;
+      left:0px;
+
+    }
+      .brillo{
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+        position: absolute;
+        top:0px;
+        left:0px;
+        z-index: 2;
+
+      }
+    .brillo:hover {
+z-index: -1;
+    	/*cursor: default;*/
+      /*background-color: rgba(255,255,0,0.5);*/
+    	/*box-shadow:
+    		inset 0 0 0 16px rgba(255,255,0,0.5),
+    		0 1px 2px rgba(0,0,0,0.1);*/
+
+      background-image: radial-gradient(
+        ellipse farthest-corner at 50% 50% ,
+        rgba(255, 255, 0, 1)  0%,
+        rgba(255, 255, 0, 0.18 ) 60%,
+        rgba(0, 0, 0, 0) 100%);
+
+    	/*transition: all 2s ease-out;*/
+      animation-duration: 2s;
+      animation-name: slidein;
+
+}
+
+@keyframes slidein {
+  from {
+        opacity: 0;
+      }
+
+  to {
+        opacity: 1;
+      }
+}
+    </style>
+
+    <link rel="stylesheet" href="custombox/custombox.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a href="https://github.com/emialonzo/la-mesa-esta-servida">
+      <i class="fa fa-github fa-4x" aria-hidden="true" style="right:0px;top:0px;position:fixed;"></i>
+    </a>
+
+    <div id="yenga">
+      <img src="yenga.png"    class=" abrir-modal" alt="" />
+      <div class="brillo"></div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+      Array.prototype.randomElement = function () {
+        return this[Math.floor(Math.random() * this.length)]
+      }
+
+      $(function() {
+        var efectos = ['flip', 'newspaper', 'superscaled', 'sweell'];
+          $('.abrir-modal').on('click', function( e ) {
+
+              Custombox.open({
+                  target: 'elenco.html',
+                  effect: efectos.randomElement()
+              });
+              e.preventDefault();
+          });
+      });
+      </script>
+    <script src="custombox/custombox.min.js"></script>
+  </body>
+</html>
